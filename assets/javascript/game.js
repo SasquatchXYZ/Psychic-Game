@@ -15,14 +15,11 @@ var userGuessLog = document.getElementById("userGuesses-log");
 
 // FUNCTIONS
 //======================================================================================================================
-
 function gameStart() {
     winsTally.textContent = "Wins: " + wins;
     lossesTally.textContent = "Losses: " + losses;
     guessesLeft.textContent = "Guesses Remaining: " + lives;
     userGuessLog.textContent = "Guessed Letters: " + guessedLetters;
-   // computerChoice = alphabet[Math.floor(Math.random() * 26)];
-   // console.log(computerChoice);
 }
 
 function gameReset() {
@@ -36,38 +33,31 @@ function gameReset() {
 //======================================================================================================================
 gameReset();
 gameStart();
-//console.log(losses);
 
 document.onkeyup = function(event) {
-    var userGuess = event.key.toLowerCase();
+        var userGuess = event.key.toLowerCase();
 
-   // var computerChoice = alphabet[Math.floor(Math.random() * 26)];
-   // console.log(computerChoice);
-if (alphabet.indexOf(userGuess) >= 0) {
-    if (userGuess === computerChoice) {
-        wins++;
-        gameReset();
+    if (alphabet.indexOf(userGuess) >= 0) {
+        if (userGuess === computerChoice) {
+            wins++;
+            alert("Correct!");
+            gameReset();
+        }
+        else {
+            lives--;
+            guessedLetters.unshift(" " + userGuess.toUpperCase() + " ");
+            console.log(guessedLetters);
+        }
+        if (lives === 0) {
+            losses++;
+            alert("No More Guesses... Try Again!");
+            gameReset();
+        }
+        gameStart();
     }
     else {
-        lives--;
-        guessedLetters.unshift(" " + userGuess.toUpperCase() + " ");
-        console.log(guessedLetters);
-    }
-    if (lives === 0) {
-        losses++;
+        alert("That is not a letter... Psychics don't like tricksters...");
         gameReset();
+        gameStart();
     }
-    gameStart();
-}
-else {
-    alert("That is not a letter... Psychics don't like tricksters...");
-    gameReset();
-    gameStart();
-}
-   // winsTally.textContent = "Wins: " + wins;
-   // guessesLeft.textContent = "Guesses Remaining: " + lives;
-   // userGuessLog.textContent = "Guessed Letters: " + guessedLetters;
 };
-
-
-//console.log(alphabet[Math.floor(Math.random() * 26)]);
