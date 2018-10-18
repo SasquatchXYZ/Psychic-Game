@@ -1,7 +1,7 @@
 # Psychic-Game
 ##### Homework Assignment 3: Basic - JavaScript
 
-This is the Basic Version of Homework #3 (the Challenging Version can be found on my [Portfolio](https://sasquatchxyz.github.io/Basic-Portfolio/)).  This game is simply a guessing game where you attempt to guess the letter that the computer has chosen.
+This is the Basic Version of Homework #3 (the Challenging Version can be found on my [Portfolio](https://sasquatchxyz.github.io/Basic-Portfolio/)).  This game is simply a guessing game where you attempt to guess the letter that the computer has chosen.  You are given 9 guesses before losing and the overall score of wins and losses is displayed.
 
 ## Getting Started
 
